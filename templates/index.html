@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление данных</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Добавить данные военнослужащего</h1>
+    <form action="{{ url_for('add_person') }}" method="POST">
+        <label for="personal_number">Личный номер:</label>
+        <input type="text" id="personal_number" name="personal_number" required><br>
+
+        <label for="first_name">Имя:</label>
+        <input type="text" id="first_name" name="first_name" required><br>
+
+        <label for="last_name">Фамилия:</label>
+        <input type="text" id="last_name" name="last_name" required><br>
+
+        <label for="midle_name">Отчество:</label>
+        <input type="text" id="midle_name" name="midle_name" required><br>
+
+        <label for="date_birthday">Дата рождения:</label>
+        <input type="date" id="date_birthday" name="date_birthday" required><br>
+
+        <label for="adress_registration">Адрес регистрации:</label>
+        <input type="text" id="adress_registration" name="adress_registration" required><br>
+
+        <label for="education">Образование:</label>
+        <input type="text" id="education" name="education" required><br>
+
+        <label for="contact_number">Контактный номер:</label>
+        <input type="text" id="contact_number" name="contact_number" required><br>
+
+        <label for="military_destination">Воинская часть:</label>
+        <select id="military_destination" name="military_destination">
+            {% for unit in military_units %}
+                <option value="{{ unit.military_destination }}">{{ unit.military_name }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="date_departure">Дата отправления:</label>
+        <input type="date" id="date_departure" name="date_departure"><br>
+
+        <label for="category_health">Категория здоровья:</label>
+        <select id="category_health" name="category_health">
+            <option value="A">Годен к военной службе</option>
+            <option value="B">Годен к военной службе с незначительными ограничениями</option>
+            <option value="C">Ограниченно годен к военной службе</option>
+            <option value="D">Временно не годен к военной службе</option>
+            <option value="E">Не годен к военной службе</option>
+        </select><br>
+
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>
