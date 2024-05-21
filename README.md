@@ -1,5 +1,3 @@
-# Creating a concise README.md content with a focus on the database and application description
-concise_readme_content = """
 # Military Database Management System
 
 ## Описание проекта
@@ -18,15 +16,3 @@ concise_readme_content = """
 - Добавлять новые военные части, если они отсутствуют в базе данных.
 
 Формы ввода данных в приложении тесно интегрированы с базой данных, обеспечивая проверку данных и гарантируя целостность информации.
-
-## Лицензия
-
-Этот проект лицензирован под лицензией MIT. Подробности см. в LICENSE файле.
-"""
-
-# Saving the concise README.md content to a file
-file_path = "/mnt/data/README.md"
-with open(file_path, "w") as file:
-    file.write(concise_readme_content)
-
-file_path
